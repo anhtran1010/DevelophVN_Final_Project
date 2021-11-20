@@ -162,61 +162,170 @@ font-weight: 900;
   border-radius: 18px;
 }
 
-.Main-info h2 {
-  margin-left: 0.5%;
-}
-
-.Main-info p {
-  margin-left: 0.5%;
-}
-
-/* This button shows review categories*/
-
-.subnav {
-  float: left;
+.tab {
   overflow: hidden;
-
-}
-
-.subnav .Reviewbtn {
   border: none;
-  border-radius: 10px;
-  outline: none;
-  color: white;
-  padding: 17px 19px;
+  background-color: rgb(246, 206, 96);
+  border-radius: 18px;
+}
+
+.tab button {
   background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-  background-color: rgb(61, 58, 58);
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  border-radius: 18px;
 }
 
-.subnav:hover .Reviewbtn {
-  background-color: rgb(61, 58, 58);
+.tab button:hover {
+  background-color: white;
+  border-radius: 18px;
 }
 
-.Review-categories {
+.tab button.active {
+  background-color:white;
+  border-radius: 18px;
+}
+
+.tabcontent {
   display: none;
-  position: absolute;
-  left: 0;
-  background-color: rgb(61, 58, 58);
-  z-index: 1;
+  margin-left: 10px;
+  border: none;
+  border-top: none;
 }
 
-.Review-categories a {
+/* This button shows path to review page*/
+#writeReviews {
+  display: grid;
+  text-align: center;
+  align-items: center;
+}
 
+.reviewForm {
+  margin-top: 20px;
+  margin-left: 25%;
+  margin-bottom: 6%;;
+  height: 100%;
+  width: 300px;
+  background: #111;
+  padding: 20px 30px;
+  border: 1px solid #444;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.post{
+  display: none;
+}
+.text{
+  font-size: 10px;
+  color: #666;
+  font-weight: 500;
+}
+.edit{
+  font-size: 16px;
+  color: #666;
+  font-weight: 500;
+  cursor: pointer;
+}
+.edit:hover{
+  text-decoration: underline;
+}
+.star-widget input{
+  display: none;
+}
+.star-widget label{
+  font-size: 30px;
+  color: #444;
   float: center;
+  transition: all 0.2s ease;
+}
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label{
   color: rgb(255, 200, 48);
-  background-color: rgb(61, 58, 58);
-  text-decoration: none;
-  padding: 12px 15px;
 }
-
-.Review-categories a:hover {
-  background-color: rgb(255, 200, 48);
-  color: black;
-  border-radius: 10px;
+input:checked ~ label{
+  color: rgb(255, 200, 48);
 }
-
-.subnav:hover .Review-categories {
+input#rate-5:checked ~ label{
+  color: rgb(255, 200, 48);
+  text-shadow: 0 0 20px #952;
+}
+#rate-1:checked ~ form header:before{
+  content: "I just hate it ";
+}
+#rate-2:checked ~ form header:before{
+  content: "I don't like it ";
+}
+#rate-3:checked ~ form header:before{
+  content: "It is awesome ";
+}
+#rate-4:checked ~ form header:before{
+  content: "I just like it ";
+}
+#rate-5:checked ~ form header:before{
+  content: "I just love it ";
+}
+.container form{
+  display: none;
+}
+input:checked ~ form{
   display: block;
 }
+form header{
+  font-size: 25px;
+  color: rgb(255, 200, 48);
+  font-weight: 500;
+  margin: 5px 0 20px 0;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+form .textarea{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+form .textarea textarea{
+  float: center;  
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #eee;
+  border: 1px solid #333;
+  background: #222;
+  padding: 10px;
+  font-size: 17px;
+  resize: none;
+}
+.textarea textarea:focus{
+  border-color: #444;
+}
+form .btn{
+  height: 45px;
+  width: 100%;
+  margin: 15px 0;
+}
+form .btn button{
+  height: 100%;
+  width: 100%;
+  border: 1px solid #444;
+  outline: none;
+  background: #222;
+  color: rgb(129, 117, 117);
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form .btn button:hover{
+  background: rgb(255, 200, 48);
+  color: rgb(61, 58, 58);
+}
+

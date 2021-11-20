@@ -7,6 +7,7 @@
     <title>School Name</title>
     <link rel="stylesheet" href="school_page.css">
 	<script src="https://kit.fontawesome.com/83fd373d2e.js" crossorigin="anonymous"></script>
+	<script src="../src/Search.js"></script>
 </head>
 <body>
     <div class="Navigation Bar">
@@ -25,7 +26,7 @@
 			</ul>
 
 			  <div class="Login">
-				<form action="login.htm" target="_blank">
+				<form action="login.html" target="_blank">
 					<button type="submit" style="color: black">SIGN UP/lOG IN</button>
 				</form>
 		      </div>
@@ -33,26 +34,58 @@
 	</div>
 
 	<div class="reminder">
-		<h1><a href="login.htm" target="_blank">ADD TO YOUR SCHOOL LIST</a></h1>
+		<h1><a href="login.html" target="_blank">ADD TO YOUR SCHOOL LIST</a></h1>
 	</div>
 
     <div class="Page-wrapper">
 		<div class="main-wrapper">
 			<img class="Bachkhoa" src="Bachkhoa.jpg">  
-				
 				<div class="Main-info">
-					<h2>Hanoi University of Science and Technology</h2>
-					<p><i class="fas fa-map-marker-alt"></i>  1 Dai Co Viet Road, Ha Noi, Viet Nam</p>
-					<P><i class="fas fa-phone-square-alt"></i>:  +84 243 869 2222</P>
-					<p><i class="far fa-envelope"></i>:  htdn@hust.edu.vn</p>
-					<p>Type: public</p>
-					<p><i class="fas fa-school"></i>:  Since establishment, HUST has been committed to research, knowledge development and intellectual training for the society. The university gains the reputation of being the first and the leading technical university in Vietnam thanks to generations of influential alumni.</p>
-					<p><i class="fas fa-money-check-alt"></i>: $3,300 - $5000 per year</p>
-					<div class="subnav">
-						<button class="Reviewbtn">Reviews <i class="fa fa-caret-down"></i></button>
-						<div class="Review-categories">
-							<a href="Review Page">Give us a review</a>
-							
+					<div class="tab">
+						<button class="tablinks" onclick="opentab(event, 'Details')">Details</button>
+						<button class="tablinks" onclick="opentab(event, 'Reviews')">Reviews</button>
+						<button class="tablinks" onclick="opentab(event, 'writeReviews')">Rate us!</button>
+					  </div>
+					  
+					  <div id="Details" class="tabcontent" style="display: block;">
+						<h2>Hanoi University of Science and Technology</h2>
+						<p><i class="fas fa-map-marker-alt"></i>  1 Dai Co Viet Road, Ha Noi, Viet Nam</p>
+						<P><i class="fas fa-phone-square-alt"></i>:  +84 243 869 2222</P>
+						<p><i class="far fa-envelope"></i>:  htdn@hust.edu.vn</p>
+						<p>Type: public</p>
+						<p><i class="fas fa-money-check-alt"></i>: $3,300 - $5000</p>
+					  </div>
+					  
+					  <div id="Reviews" class="tabcontent" style="display: none;">
+					  </div>
+
+					  <div id="writeReviews" class="tabcontent" style="display: none;">
+						<div class="reviewForm">
+							<div class="post">
+								<div class="text">Thanks for rating us!</div>
+								<div class="edit">EDIT</div>
+							</div>
+							<div class="star-widget">
+								<input type="radio" name="rate" id="rate-5">
+								<label for="rate-5" class="fas fa-star"></label>
+								<input type="radio" name="rate" id="rate-4">
+								<label for="rate-4" class="fas fa-star"></label>
+								<input type="radio" name="rate" id="rate-3">
+								<label for="rate-3" class="fas fa-star"></label>
+								<input type="radio" name="rate" id="rate-2">
+								<label for="rate-2" class="fas fa-star"></label>
+								<input type="radio" name="rate" id="rate-1">
+								<label for="rate-1" class="fas fa-star"></label>
+								<form action="#" method="POST">
+								<header></header>
+								<div class="textarea">
+									<textarea cols="30" placeholder="Describe your experience.."></textarea>
+								</div>
+								<div class="btn">
+									<button type="submit">Post</button>
+								</div>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>

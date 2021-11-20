@@ -1,11 +1,21 @@
-let Colleges = class {
-    constructor(name, location, description, tuition, entrance_score, reviews) {
+class College {
+    constructor(name, location, tel, email, type, tuition, rating, review) {
         this.name = name;
         this.location = location;
-        this.description = description;
+        this.tel = tel;
+        this.email = email;
+        this.type = type;
         this.tuition = tuition;
-        this.entrance_score = entrance_score;
-        this.reviews = reviews;
+        this.rating = rating;
+        this.review = review;
     }
 }
+
+
+
+
+
+
+    
+
 

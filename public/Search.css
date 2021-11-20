@@ -166,7 +166,7 @@ select {
 
 .Search-results {
   position: absolute; 
-  background: white;
+  background: rgb(255, 200, 48);
   background-size: cover;
   width: 45%;
   margin-top: 35px;

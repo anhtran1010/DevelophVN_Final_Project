@@ -1,31 +1,19 @@
-import express from "express";
-import bodyParser from "body-parser";
-import mongoose from "mongoose";
-
-const app = express()
-
-app.use(express.static('public'));
-
-mongoose.connect('mongodb://localhost:27017/MyUni',{
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
-
-var db = mongoose.connection;
-
-db.on('error',()=>console.log("Error in Connecting to Database"));
-db.once('open',()=>console.log("Connected to Database"))
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import App from './App';
 
 
-app.get("/",(req,res)=>{
-    res.set({
-        "Allow-access-Allow-Origin": '*'
-    })
-    return res.redirect('Search.htm');
-});
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider>
+      <App />
+    </Provider>,
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
-app.listen(8080, () => {
-	console.log(`Server started on 8080`);
-});
-
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 

@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 body{
   margin: 0;
@@ -52,6 +52,7 @@ form .txt_field{
   color: rgb(61, 58, 58);
   transform: translateY(-50%);
   font-size: 16px;
+  font-weight: bold;
   pointer-events: none;
   transition: .5s;
 }
