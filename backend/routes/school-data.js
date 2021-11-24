@@ -1,9 +1,9 @@
 import express from 'express';
 
-import fetchController from '../controller/fetch-controller';
+import fetchData from '../controller/fetch-controller';
 
 var router = express.Router();
 
-router.get('/school-data', fetchController.fetchData);
+router.get('/school-data', fetchData);
 
 export default router;

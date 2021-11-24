@@ -31,9 +31,9 @@
 		    </div>
 			
 			<div class="search-container">
-				<form action="#Result">
+				<form action="/search" method="GET">
 				  <input type="text" placeholder="Find your college" name="search">
-				  <button type="submit"><img class="search-icon" src="C:\Users\Bao's Laptop\OneDrive\Pictures\Saved Pictures\image-removebg-preview (1).png"></button>
+				  <button type="submit"><img class="search-icon" src="icon1.png"></button>
 				</form>
 			</div>
 		</nav>
@@ -51,10 +51,10 @@
 				<label for="type2">Private</label><br>
 
 				<h3>Area of study</h3>
-				<select id="Field-o-study">
-					<option value="Any">Any</option>
-					<option value="agri">Agricultural Studies</option>
-					<option value="Architecture">Architecture</option>
+				<form action="/fields" method="get">
+					<select id="Field-of-study">
+						<option value="Any">Any</option>
+				</form>
 
 				</select>
 
@@ -88,7 +88,7 @@
 			</ol>
 		</div>
 	</div>
-	<script src="../src/Search.js"></script>
+	<script src="../src/DOMS.js"></script>
 </body>
 </html>
 

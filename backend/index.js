@@ -2,12 +2,14 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import bodyParser from "body-parser";
-import router from './routes/school-data.js';
+import router from "./routes/routes"
+import path from "path";
+import MongoClient from "mongodb";
 
 const app = express()
 
 mongoose.connect(
-    `mongodb://localhost/MyUni`,
+    'mongodb://localhost:27017/MyUni',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -24,11 +26,12 @@ mongoose.connect(
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use('/school-data', router);
+app.use(router);
+app.use(express.static(path.join('public')));
 
 
-app.listen(8080, () => {
-	console.log(`Server started on 8080`);
+app.listen(3000, () => {
+	console.log(`Server started on 3000`);
 });
 
 

@@ -9,6 +9,7 @@ import {school, username} from '../models/users';
 const router = express.Router();
 
 export const getSchool = async (req, res) => { 
+    var { school } = req.body;
     try {
         const results = await Universities.find({ school });
                 
@@ -36,16 +37,6 @@ export const postReviews = (req, res) => {
     } catch (error) {
         res.status(409).json({ message: error.message });
     }
-}
-
-export const deleteReview = async (req, res) => {
-    const { id } = req.params;
-
-    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No post with id: ${id}`);
-
-    await Universities.findByIdAndRemove(id);
-
-    res.json({ message: "Post deleted successfully." });
 }
 
 module.exports = router;

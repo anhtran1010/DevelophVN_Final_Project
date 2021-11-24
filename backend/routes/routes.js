@@ -4,9 +4,9 @@ import { createAccount, login } from '../controller/users'
 
 const router = express.Router();
 
-router.get('../controller/routes', getSchool);
-router.post('../controller/users', createAccount);
-router.get('../controller/users', login)
-router.post('../controller/routes', postReviews);
+router.get('/search', getSchool);
+router.post('/signup', createAccount);
+router.get('/login', login)
+router.post('/review', postReviews);
 
 export default router;

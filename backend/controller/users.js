@@ -1,5 +1,4 @@
 import express from 'express';
-// eslint-disable-next-line no-unused-vars
 import mongoose from 'mongoose';
 import users from '../models/users';
 
@@ -13,7 +12,7 @@ export const createAccount = (req, res) => {
         console.log("Record Inserted Successfully");
     });
 
-    return res.redirect('main.htm');
+    return res.redirect('login.html');
 }
   
 export const login = (req, res) => {
@@ -22,6 +21,7 @@ export const login = (req, res) => {
         const user = users.find({username, password});
                 
         res.status(200).json(user);
+        return res.redirect('main.htm');
     } catch (err) {
         res.status(401).json({ success: false, err: err.message });
     }
