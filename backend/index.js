@@ -2,9 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import bodyParser from "body-parser";
-import router from "./routes/routes"
+import router from './routes'
 import path from "path";
-import MongoClient from "mongodb";
 
 const app = express()
 

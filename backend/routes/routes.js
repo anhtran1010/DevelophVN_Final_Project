@@ -8,5 +8,6 @@ router.get('/search', getSchool);
 router.post('/signup', createAccount);
 router.get('/login', login)
 router.post('/review', postReviews);
+router.get('/', )
 
-export default router;
+module.exports =  router;

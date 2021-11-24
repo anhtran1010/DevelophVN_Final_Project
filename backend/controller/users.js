@@ -1,8 +1,7 @@
 import express from 'express';
+// eslint-disable-next-line no-unused-vars
 import mongoose from 'mongoose';
 import users from '../models/users';
-
-const router = express.Router();
 
 export const createAccount = (req, res) => {
     req.users.insertOne(users,(err,collection) => {
@@ -26,5 +25,3 @@ export const login = (req, res) => {
         res.status(401).json({ success: false, err: err.message });
     }
 }
-
-module.exports = router;

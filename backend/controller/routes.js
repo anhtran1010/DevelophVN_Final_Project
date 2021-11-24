@@ -6,8 +6,6 @@ import users from '../models/users';
 import {school, username} from '../models/users';
 
 
-const router = express.Router();
-
 export const getSchool = async (req, res) => { 
     var { school } = req.body;
     try {
@@ -30,7 +28,6 @@ export const postReviews = (req, res) => {
             review: newReview
         }
     }
-    
     try {
          Universities.updateOne(query, update);
          res.status(200).json(newReview)
@@ -39,4 +36,3 @@ export const postReviews = (req, res) => {
     }
 }
 
-module.exports = router;

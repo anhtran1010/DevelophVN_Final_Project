@@ -4,6 +4,6 @@ const fieldsSchema = new mongoose.Schema( {
     field: String,
 });
 
-const fields = mongoose.model('fields', fieldsSchema);
+const Fields = mongoose.model('fields', fieldsSchema);
 
-module.exports = fields;
+export default Fields;

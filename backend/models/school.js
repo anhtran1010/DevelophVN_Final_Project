@@ -22,13 +22,4 @@ const UniversitiesSchema = new mongoose.Schema({
 
 var Universities  = mongoose.model('Universities', UniversitiesSchema);
 
-module.exports = {
-    fetchData :  function(callback) {
-        var schoolData = Universities.find();
-        schoolData.exec(function(err, data) {
-            if(err) 
-            throw err;
-            return callback(data);
-        })
-     }
-};
+export default Universities;

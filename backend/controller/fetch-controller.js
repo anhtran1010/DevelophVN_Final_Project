@@ -1,7 +1,21 @@
-import { _fetchData } from '../models/school.js';
-export var fetchData = (req, res) => {
+import Universities from "../models/school";
+import Fields from "../models/fields";
 
-  _fetchData(function (data) {
-    res.render('school-info', { Universities: data });
-  });
+//fetch data for fields of study inside filter
+export const FieldStudy = (req, res) => {
+
 }
+
+export const schoolData = async (req, res) => { 
+  try {
+      const school = await Universities.find({});
+              
+      res.status(200).json(school);
+  } catch (error) {
+      res.status(404).json({ message: error.message });
+  }
+}
+
+
+
+
